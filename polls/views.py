@@ -1,10 +1,12 @@
 from django.shortcuts import render,redirect
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 from .forms import QuestionForm
 from .models import Question
-from django.contrib.auth import get_user_model
+
 
 User=get_user_model()
-
 
 
 def home_main(request):
@@ -14,17 +16,6 @@ def home_main(request):
         return render(request,'Home/home.html',context)
     else:
         return render(request,'main.html',context)
-
-        
-
-        
-
-
-# def home(request):
-
-#     questions=Question.objects.all()
-#     context={'questions':questions}
-#     return render(request,'Home/home.html',context)
 
 
 def create_question(request):  

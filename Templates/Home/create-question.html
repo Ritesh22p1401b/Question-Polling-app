@@ -4,10 +4,38 @@
 <div>
     <form method="POST" action="">
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" name="submit" value="Submit" />
+        <br/><br/>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Question</span>
+            <input type="text" class="form-control" name="questions" placeholder="Write your Question" aria-label="questions" aria-describedby="addon-wrapping">
+        </div>
+        <br/>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">op1</span>
+            <input type="text" class="form-control" name="op1" placeholder="option1" aria-label="op1" aria-describedby="addon-wrapping">
+        </div>
+        <br/>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">op2</span>
+            <input type="text" class="form-control" name="op2" placeholder="option2" aria-label="op1" aria-describedby="addon-wrapping">
+        </div>
+        <br/>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">op3</span>
+            <input type="text" class="form-control" name="op3" placeholder="option3" aria-label="op1" aria-describedby="addon-wrapping">
+        </div>
+        <br/>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">op4</span>
+            <input type="text" class="form-control" name="op4" placeholder="option4" aria-label="op1" aria-describedby="addon-wrapping">
+        </div>
+        <br/>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Answer</span>
+            <input type="text" class="form-control" name="ans" placeholder="ans" aria-label="ans" aria-describedby="addon-wrapping">
+        </div>
+        <br/>
+        <input type="submit" name="submit" value="Submit" class="btn btn-dark"/>
     </form>
 </div>
-
-
 {% endblock %}
