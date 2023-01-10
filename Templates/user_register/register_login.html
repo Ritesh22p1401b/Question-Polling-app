@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% if page == 'login' %}
+    
+
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <br/><br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Username</span>
+                <input type="text" class="form-control" name="username" placeholder="Username" aria-label="username" aria-describedby="addon-wrapping" >
+            </div>
+
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Password</span>
+                <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="addon-wrapping">
+            </div>
+            <br>
+            <input type="submit" name="submit" value="Login" class="btn btn-dark"/>
+        </form>
+    </div>
+
+{% else %}
+
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <br/><br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Username</span>
+                <input type="text" class="form-control" name="username" placeholder="Username" aria-label="username" aria-describedby="addon-wrapping" >
+            </div>
+            <br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">First Name</span>
+                <input type="text" class="form-control" name="first_name" placeholder="First Name" aria-label="first_name" aria-describedby="addon-wrapping" >
+            </div>
+            <br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Last Name</span>
+                <input type="text" class="form-control" name="last_name" placeholder="Last Name" aria-label="last_name" aria-describedby="addon-wrapping">
+            </div>
+            <br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">E Mail</span>
+                <input type="email" class="form-control" name="email" placeholder="E Mail" aria-label="email" aria-describedby="addon-wrapping">
+            </div>
+            <br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Moblie Number</span>
+                <input type="text" class="form-control" name="phone_number" placeholder="Mobile Number" aria-label="phone_number" aria-describedby="addon-wrapping">
+            </div>
+            <br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Password</span>
+                <input type="password1" class="form-control" name="password1" placeholder="Password" aria-label="password1" aria-describedby="addon-wrapping">
+            </div>
+            <br/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Confirm Password</span>
+                <input type="password2" class="form-control" name="password2" placeholder="Confirm Password" aria-label="password2" aria-describedby="addon-wrapping">
+            </div>
+            <br/>
+            <input type="submit" value="Submit" name="submit" class="btn btn-dark"/>
+        </form>
+    </div>
+    
+{% endif %}
+
+{% endblock %}

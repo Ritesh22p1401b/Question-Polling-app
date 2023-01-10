@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 5fr 10fr 5fr;
+        padding: 0;
+        flex-basis: 100%;
+        width: 90%;
+        margin: auto;
+    }
+</style>
+<br />
+<div class="home-container">
+    <form method='post' action=''>
+        {% csrf_token %}
+        {% for q in questions %}
+        <div class="form-group">
+            <a href="{% url 'profile' q.user.id %}">
+                <span>@{{q.user.username}}</span>
+            </a>
+            <div>
+                <span>{{q.created_at|timesince}} ago</span>
+            </div>
+            <label class="form-check-label">{{q.id}}-{{q.questions}}</label>
+        </div>
+        <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="gridRadios1">
+                    {{q.op1}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                    {{q.op2}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="option3">
+                <label class="form-check-label" for="gridRadios1">
+                    {{q.op3}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="option4">
+                <label class="form-check-label" for="gridRadios2">
+                    {{q.op4}}
+                </label>
+            </div>
+            <input type="submit" value="Submit" name="submit" />
+            <br>
+        </div>
+        {% endfor %}
+    </form>
+
+</div>
+
+
+{% endblock %}
